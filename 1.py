@@ -1,4 +1,3 @@
-# test
 import time
 from random import randrange
 
