@@ -1,17 +1,13 @@
-import time
-from random import randrange
+import time,random
 
 def sorter(l):
-    n1 = 0
-    n2 = 1
+    for i in range(len(l) - 1):
+        n1 = 0
 
-    while n1 < len(l) and n2 < len(l):
-        if l[n1] > l[n2]:
-            k = l[n1]
-            l[n1] = l[n2]
-            l[n2] = k
-        n1 += 1
-        n2 += 1
+        while (n1 + 1) < len(l):
+            if l[n1] > l[n1+1]:
+                l[n1], l[n1+1] = l[n1+1], l[n1]
+            n1 += 1
 
     return l
         
@@ -24,18 +20,19 @@ def check(l):
 
     return False
 
+
 class MyList:
+
 
     def __init__(self, length, lmax = 13579, lmin = 0):
         self.data = []
    
         for i in range(length):
-            self.data.append(randrange(lmin,lmax,1))    
+            self.data.append(random.randrange(lmin,lmax,1))    
 
 
     def sort(self):
-        while check(self.data):
-            self.data = sorter(self.data)
+        self.data = sorter(self.data)
 
 
     def __str__(self):
@@ -46,9 +43,12 @@ class MyList:
 
         return m
 
-begin = time.clock()
+
 m = MyList(input("Enter length of list: "))
+begin = time.clock()
 m.sort()
-print "List sorted. Time of my work: ", time.clock() - begin
+end = time.clock()
+print "List is sorted. Time of my work: ", time.clock() - begin
+
 
 
