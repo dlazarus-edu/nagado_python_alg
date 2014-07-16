@@ -8,8 +8,6 @@ def sorter(l):
             if l[n1] > l[n1+1]:
                 l[n1], l[n1+1] = l[n1+1], l[n1]
             n1 += 1
-
-    return l
         
 
 def check(l):
@@ -32,7 +30,7 @@ class MyList:
 
 
     def sort(self):
-        self.data = sorter(self.data)
+        sorter(self.data)
 
 
     def __str__(self):
@@ -49,6 +47,7 @@ begin = time.clock()
 m.sort()
 end = time.clock()
 print "List is sorted. Time of my work: ", time.clock() - begin
+print m
 
 
 
