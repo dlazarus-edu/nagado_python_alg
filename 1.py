@@ -1,46 +1,5 @@
-import time,random
+import bubble_sort, SortTester
 
 
-def bubblesort(data):
-    for _ in range(len(data) - 1):
-        n1 = 0
-
-        while (n1 + 1) < len(data):
-            if data[n1] > data[n1+1]:
-                data[n1], data[n1+1] = data[n1+1], data[n1]
-            n1 += 1
-        
-
-class Tester:
-    def __init__(self, length, lmax = 13579, lmin = 0):
-        self.data = []
-   
-        for i in range(length):
-            self.data.append(random.randrange(lmin,lmax,1))    
-
-    def check(self):
-        for i in range(len(self.data)-1):
-            if self.data[i] > self.data[i + 1]:
-                return True
-                break
-
-        return False
-
-    def run(self, sort_func):
-        begin = time.clock()
-        sort_func(self.data)
-        end = time.clock()
-        if self.check():
-            print "Something is wrong"
-        else:
-            print "List is sorted. Time of my work: ", time.clock() - begin
-            print self.data
-
-    def __str__(self):
-        for i in self.data:
-            print i 
-
-
-
-test = Tester(input("Enter length of list: "))
-test.run(bubblesort)
+test = SortTester.SortTester(input("Enter length of list: "))
+test.run(bubble_sort.bubble_sort)
