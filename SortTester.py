@@ -18,13 +18,11 @@ class SortTester:
         begin = time.clock()
         sort_func(self.data)
         end = time.clock()
+
         if self.check():
             print "Something is wrong"
         else:
             print "List is sorted. Time of my work: ", time.clock() - begin
-            print self.data
-
-    def __str__(self):
-         return ' '.join(self.data)
+##            print self.data
 
 

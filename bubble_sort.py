@@ -5,6 +5,7 @@ def bubble_sort(data):
         while (n1 + 1) < len(data):
             if data[n1] > data[n1+1]:
                 data[n1], data[n1+1] = data[n1+1], data[n1]
+
             n1 += 1
         
 
