@@ -22,7 +22,7 @@ class SortTester:
         if self.check():
             print "Something is wrong"
         else:
-            print "List is sorted. Time of my work: ", time.clock() - begin
+            print "Time of my work: ", time.clock() - begin
 ##            print self.data
 
 
