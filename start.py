@@ -1,7 +1,9 @@
-import sys, SortTester
+import sys, SortTester, re
 
 if len(sys.argv) == 2:
     name = sys.argv[1]
+    if '.py' in name:
+        name = re.sub('.py', '', name)
 else:
     print "You need to enter name of program that you want to test"
     exit()
@@ -9,7 +11,7 @@ else:
 try: 
     sorter = getattr(__import__(name), name)
 except ImportError:
-    print "I can't find file to import. Maybe you wrote '.py' in the end, or you misspeled. Check yourself and try again!"
+    print "I can't find file to import. Check yourself and try again!"
     exit()
 except AttributeError:
     print "There is no attribute ", name, ". Try again."
