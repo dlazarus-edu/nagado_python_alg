@@ -18,21 +18,22 @@ def benchmark():
         print key.replace('_', ' ')[0].upper() + key.replace('_', ' ')[1:], "list with 10000 elements:"
         testList = SortTester.SortTester(10000, key)
         testList.run(sorter)
-        print testList
 
 
-def workOnArguments():
+def work_on_arguments():
     global name, arg
     if len(sys.argv) == 3:
         name = sys.argv[1]
         arg = sys.argv[2]
         if '.py' in name:
             name = re.sub('.py', '', name)
+
     else:
         print "You need to enter name of program that you want to test or type of test(test or benchmark)"
         exit()
 
-def getSorter():
+
+def get_sorter():
     try: 
         sorter = getattr(__import__(name), name)
 
@@ -46,11 +47,14 @@ def getSorter():
 
     return sorter
 
-workOnArguments()
-sorter = getSorter()
+
+work_on_arguments()
+sorter = get_sorter()
 if arg == 'test':
     test()
+
 elif arg == 'benchmark':
     benchmark()
+
 else:
    print 'You need to give 2nd argument "test" or "benchmark".'
