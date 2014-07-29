@@ -35,9 +35,9 @@ class SortTester:
         sort_func(self.data)
 
         if self.check():
-            print "Something is wrong"
+            print("Something is wrong")
         else:
-            print "Well done!"
+            print("Well done!")
 
     def run(self, sort_func):
         begin = time.clock()
@@ -45,9 +45,9 @@ class SortTester:
         end = time.clock()
 
         if self.check():
-            print "Something is wrong"
+            print("Something is wrong")
         else:
-            print "Time of my work: ", time.clock() - begin
-##            print self.data
+            print ("Time of my work: ", time.clock() - begin)
+##            print(self.data)
 
 
