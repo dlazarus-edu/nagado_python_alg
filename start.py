@@ -4,20 +4,21 @@ import sys, SortTester, re
 def test():
     testList = SortTester.SortTester(100)
     testList.simple_test(sorter)
+##    print(testList)
 
 
 def benchmark():
-    print("Random unique data in list:")
+
 
     for i in [100, 1000, 10000]:
         testList = SortTester.SortTester(i)
-        print(i, "elements in a list.", end=" ")
         testList.run(sorter)
 
     for key in ('sorted', 'reverse_sorted', 'random_doubled'):
-        print(key.replace('_', ' ')[0].upper() + key.replace('_', ' ')[1:], "list with 10000 elements:")
         testList = SortTester.SortTester(10000, key)
         testList.run(sorter)
+
+    print()
 
 
 def work_on_arguments():

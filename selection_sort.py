@@ -9,3 +9,4 @@ def selection_sort(data):
         data.remove(min)
         data.insert(k, min)
 
+    return data
