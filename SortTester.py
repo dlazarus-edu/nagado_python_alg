@@ -1,7 +1,7 @@
 import time, random
 
 class SortTester:
-    def __init__(self, length, key = 'random', lmax = 13579, lmin = 0):
+    def __init__(self, length,key = 'random', lmax = 13579, lmin = 0):
         self.data = []
         
         if key == 'random':
@@ -48,8 +48,6 @@ class SortTester:
         else:
             print(round(time.clock() - begin, 7), end=" ")
 
-    def __str__(self):
+    def printMe(self):
         for i in self.data:
             print(i, end=" ")
-    
-        return ""
