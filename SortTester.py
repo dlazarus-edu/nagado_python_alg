@@ -1,12 +1,12 @@
 import time, random
 
 class SortTester:
-    def __init__(self, length, key = 'random', lmax = 13579, lmin = 0):
+    def __init__(self, length,key = 'random', lmax = 13579, lmin = 0):
         self.data = []
         
         if key == 'random':
             for _ in range(length):
-                num = random.randrange(0, 999999999, 1) ##Try do-while
+                num = random.randrange(0, 999999999, 1)
                 while num in self.data: 
                     num = random.randrange(0, 999999999, 1)
                 self.data.append(num)    
@@ -23,7 +23,6 @@ class SortTester:
                     if len(self.data) < length:
                         self.data.append(random.randrange(0, 999999999, 1))
 
-
     def check(self):
         for i in range(len(self.data)-1):
             if self.data[i] > self.data[i + 1]:
@@ -32,7 +31,7 @@ class SortTester:
         return False
 
     def simple_test(self, sort_func):
-        sort_func(self.data)
+        self.data = sort_func(self.data)
 
         if self.check():
             print("Something is wrong")
@@ -41,13 +40,14 @@ class SortTester:
 
     def run(self, sort_func):
         begin = time.clock()
-        sort_func(self.data)
+        self.data = sort_func(self.data)
         end = time.clock()
 
         if self.check():
             print("Something is wrong")
         else:
-            print ("Time of my work: ", time.clock() - begin)
-##            print(self.data)
+            print(round(time.clock() - begin, 7), end=" ")
 
-
+    def printMe(self):
+        for i in self.data:
+            print(i, end=" ")
