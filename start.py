@@ -4,12 +4,9 @@ import sys, SortTester, re
 def test():
     testList = SortTester.SortTester(100)
     testList.simple_test(sorter)
-##    print(testList)
 
 
 def benchmark():
-
-
     for i in [100, 1000, 10000]:
         testList = SortTester.SortTester(i)
         testList.run(sorter)

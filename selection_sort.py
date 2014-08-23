@@ -1,12 +1,14 @@
+from SortTester import compare
+
 def selection_sort(data):
     for k in range(len(data)):
-        min = data[k]
+        minNum = data[k]
         
         for i in range(k, len(data)):
-              if data[i] < min:
-                  min = data[i]
+              if compare(data[i], '<', minNum, 'tuple'):
+                  minNum = data[i]
                   
-        data.remove(min)
-        data.insert(k, min)
+        data.remove(minNum)
+        data.insert(k, minNum)
 
     return data
