@@ -71,6 +71,8 @@ class SortTester:
         for i in self.data:
             print(i, end=" ")
 
+        print()
+
 
 def compare(el1, sign, el2, mode = 'usual', num = 1):
     if mode == 'usual':
