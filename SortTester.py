@@ -6,9 +6,9 @@ class SortTester:
         
         if key == 'random':
             for i in range(length):
-                num = str(random.randrange(0, 999999999, 1))
+                num = str(random.randrange(0, 99, 1))  ##9999990
                 while num in self.data: 
-                    num = str(random.randrange(0, 999999999, 1))                    
+                    num = str(random.randrange(0, 99, 1))  ##9999999
                 self.data.append((i, num))    
         elif key == 'sorted':
             for i in range(length):
@@ -76,31 +76,31 @@ class SortTester:
 
 def compare(el1, sign, el2, mode = 'usual', num = 1):
     if mode == 'usual':
-        if sign == '>' and el1 > el2:
+        if sign == '>' and float(el1) > float(el2):
             return True
-        if sign == '==' and el1 == el2:
+        if sign == '==' and float(el1) == float(el2):
             return True
-        if sign == '<' and el1 < el2:
+        if sign == '<' and float(el1) < float(el2):
             return True
-        if sign == '!=' and el1 != el2:
+        if sign == '!=' and float(el1) != float(el2):
             return True
-        if (sign == '>=' or sign == '=>') and el1 >= el2:
+        if (sign == '>=' or sign == '=>') and float(el1) >= float(el2):
             return True
-        if (sign == '<=' or sign == '=<') and el1 <= el2:
+        if (sign == '<=' or sign == '=<') and float(el1) <= float(el2):
             return True
 
     elif mode == 'tuple':
-        if sign == '>' and el1[num] > el2[num]:
+        if sign == '>' and float(el1[num]) > float(el2[num]):
             return True
-        if sign == '==' and el1[num] == el2[num]:
+        if sign == '==' and float(el1[num]) == float(el2[num]):
             return True
-        if sign == '<' and el1[num] < el2[num]:
+        if sign == '<' and float(el1[num]) < float(el2[num]):
             return True
-        if sign == '!=' and el1[num] != el2[num]:
+        if sign == '!=' and float(el1[num]) != float(el2[num]):
             return True
-        if (sign == '>=' or sign == '=>') and el1[num] >= el2[num]:
+        if (sign == '>=' or sign == '=>') and float(el1[num]) >= float(el2[num]):
             return True
-        if (sign == '<=' or sign == '=<') and el1[num] <= el2[num]:
+        if (sign == '<=' or sign == '=<') and float(el1[num]) <= float(el2[num]):
             return True
 
 
