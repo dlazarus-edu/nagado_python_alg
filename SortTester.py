@@ -6,9 +6,9 @@ class SortTester:
         
         if key == 'random':
             for i in range(length):
-                num = str(random.randrange(0, 99, 1))  ##9999990
+                num = str(random.randrange(0, 999999999, 1))
                 while num in self.data: 
-                    num = str(random.randrange(0, 99, 1))  ##9999999
+                    num = str(random.randrange(0, 999999999, 1))
                 self.data.append((i, num))    
         elif key == 'sorted':
             for i in range(length):

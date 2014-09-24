@@ -2,7 +2,7 @@ import sys, SortTester, re
 
 
 def test():
-    testList = SortTester.SortTester(10)##
+    testList = SortTester.SortTester(100)
     testList.simple_test(sorter)
 
 
