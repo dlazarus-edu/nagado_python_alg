@@ -4,12 +4,9 @@ import sys, SortTester, re
 def test():
     testList = SortTester.SortTester(100)
     testList.simple_test(sorter)
-##    print(testList)
 
 
 def benchmark():
-
-
     for i in [100, 1000, 10000]:
         testList = SortTester.SortTester(i)
         testList.run(sorter)
@@ -51,11 +48,11 @@ def get_sorter():
 
 work_on_arguments()
 sorter = get_sorter()
-if arg == 'test':
+if arg == '-t':
     test()
 
-elif arg == 'benchmark':
+elif arg == '-b':
     benchmark()
 
 else:
-   print('You need to give 2nd argument "test" or "benchmark".')
+   print('You need to give 2nd argument "-t" or "-b".')

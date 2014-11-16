@@ -1,3 +1,5 @@
+from SortTester import compare
+
 def merge_sort(data):
     if len(data) > 1:
         middle = int(len(data) / 2)
@@ -15,7 +17,7 @@ def merge(list1, list2):
     merged_list = []
 
     while (len(list1) >= 1) and (len(list2) >= 1):
-        if list1[0] < list2[0]:
+        if compare(list1[0], '<', list2[0], 'tuple'):
             merged_list.append(list1.pop(0))
 
         elif list1[0] == list2[0]:
